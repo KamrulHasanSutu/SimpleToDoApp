@@ -8,6 +8,7 @@ const BulkController = ({ clearSelected, clearCompleted, reset }) => (
         <Button color="danger" onClick={clearSelected}>clear selected</Button>
         <Button color="danger" onClick={clearCompleted}>clear Completed</Button>
         <Button color="danger" onClick={reset}>reset</Button>
+        
     </ButtonGroup>
 )
 BulkController.propTypes = {

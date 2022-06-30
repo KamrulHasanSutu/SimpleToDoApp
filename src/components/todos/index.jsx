@@ -6,34 +6,35 @@ import TableView from "../tableview";
 import CreateTodoForm from "../create-todo-form";
 import Controller from "../controllers";
 
+const initValues = [
+    {
+        id: 'dsfsds3fds',
+        text: 'main todo text',
+        description: 'simple description',
+        time: new Date(),
+        isComplete: false,
+        isSelect: false
+    },
+    {
+        id: 'dsfsdfdsdsfs',
+        text: 'main Another Task',
+        description: 'simple description',
+        time: new Date(),
+        isComplete: false,
+        isSelect: false
+    },
+    {
+        id: 'dsfsdfdsdsdsfs',
+        text: 'New Task',
+        description: 'simple description',
+        time: new Date(),
+        isComplete: false,
+        isSelect: false
+    }
+]
 class Todos extends React.Component {
     state = {
-        todos: [
-            {
-                id: 'dsfsds3fds',
-                text: 'main todo text',
-                description: 'simple description',
-                time: new Date(),
-                isComplete: false,
-                isSelect: false
-            },
-            {
-                id: 'dsfsdfdsdsfs',
-                text: 'main Another Task',
-                description: 'simple description',
-                time: new Date(),
-                isComplete: false,
-                isSelect: false
-            },
-            {
-                id: 'dsfsdfdsdsdsfs',
-                text: 'New Task',
-                description: 'simple description',
-                time: new Date(),
-                isComplete: false,
-                isSelect: false
-            }
-        ],
+        todos: initValues,
         searchTerm: '',
         isOpenTodoForm: false,
         view: 'list',
@@ -103,16 +104,14 @@ class Todos extends React.Component {
         this.setState({ todos })
     }
     reset = () => {
-        const todos = [...this.state.todos]
-
         this.setState({
-            todos,
+            todos:initValues,
+            filter: 'all',
             searchTerm: '',
             view: 'list',
-            filter: 'all',
-            isOpenTodoForm: false,
-        })
-    }
+            isOpenTodoForm: false
+        });
+    };
 
 
     getView = () => {
