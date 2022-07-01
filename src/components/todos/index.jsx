@@ -75,6 +75,7 @@ class Todos extends React.Component {
 
         const todos = [obj, ...this.state.todos]
         this.setState({ todos })
+        
         this.toggleForm()
     }
 
@@ -149,6 +150,7 @@ class Todos extends React.Component {
                     clearCompleted={this.clearCompleted}
                     reset={this.reset}
                     view={this.state.view}
+                    filter={this.state.filter}
                 />
 
                 {this.getView()}

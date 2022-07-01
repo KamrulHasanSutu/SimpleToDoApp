@@ -6,7 +6,7 @@ import ViewController from "./view-controller";
 import FilterController from "./filter-controller";
 
 
-const Controller = ({term, handleSearch, toggleForm,handleFilter,view,changeView,clearSelected, clearCompleted, reset})=> (
+const Controller = ({term, handleSearch, toggleForm,handleFilter,view,changeView,clearSelected, clearCompleted, reset,filter})=> (
     <div>
         <SearchPanel 
             term={term}
@@ -18,7 +18,7 @@ const Controller = ({term, handleSearch, toggleForm,handleFilter,view,changeView
             <Col md={{size:4}}>
                 <FilterController 
                     handleFilter={handleFilter}
-                    view={view}
+                    filter={filter}
                 />
             </Col>
             <Col md={{size:4}}>
